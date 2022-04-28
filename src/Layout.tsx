@@ -3,9 +3,7 @@ import SideBar from './components/SideBar';
 
 const Layout = () => {
     return (
-        <div>
-            <SideBar/>
-        </div>
+        <SideBar />
     );
 };
 
