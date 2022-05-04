@@ -1,8 +1,10 @@
+import { useRouter } from 'next/router';
 import React, { Fragment, useEffect, useState } from 'react';
 
 const Header = () => {
     const [clock, setClock] = useState<Date>(new Date());
     const [currentTime, setCurrentTime] = useState<string>("");
+    const route = useRouter();
     const className = "menu_item";
     const classNameSelect = "menu_item menu_selected";
 
@@ -38,6 +40,10 @@ const Header = () => {
         document.querySelector(`#${idMenu}`)?.setAttribute("class", classNameSelect);
     }
 
+    const onLogout = () => {
+        route.push("/login");
+    }
+
     return (
         <div className="header_wrapper">
             <div className={className}
@@ -65,7 +71,7 @@ const Header = () => {
             </div>
             <div className={className}
                 id="LOGOUT"
-                onClick={() => handelChangeMenu("LOGOUT")}
+                onClick={() => onLogout()}
             >
                 <span className="menu_title">LOGOUT</span>
             </div>
