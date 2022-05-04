@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 
-const Header = () => {
+const Body = () => {
     return (
-        <div className="header_wrapper" >
-            <p>hello</p>
+        <div className="body_wrapper" >
+            <p>hello body</p>
         </div>
     );
 };
 
-export default Header;
+export default Body;

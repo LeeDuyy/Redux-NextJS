@@ -1,0 +1,6 @@
+@import "./Variables.scss";
+
+.body_wrapper {
+    height: 100% - $header_height;
+    border-bottom-right-radius: 40px;
+}

@@ -41,7 +41,7 @@ const SideBar = () => {
                 </div>
             </div>
             <div className="title_side_bar">
-                Groups
+                Groups TODO
             </div>
             <Menu
                 className="side_bar_items"

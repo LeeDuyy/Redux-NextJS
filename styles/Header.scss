@@ -2,6 +2,47 @@
 
 .header_wrapper {
     height: $header_height;
-    background-color: red;
     border-top-right-radius: 40px;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    .menu_item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 150px;
+        font-size: 20px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #b9dcf2;
+            border-radius: 5px;
+        }
+    }
+    
+    .menu_item_clock {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 150px;
+    }
+
+    .menu_title_clock {
+        font-weight: bold;
+        font-size: 50px;
+    }
+
+    border-bottom: 1px solid #f0f0f0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(240, 240, 240);
+}
+
+.menu_selected {
+    background-color: #b9dcf2;
+    border-radius: 5px;
 }
