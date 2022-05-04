@@ -8,8 +8,8 @@ import "antd/dist/antd.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "../styles/SideBar.scss";
+import "../styles/Layout.scss";
 import "../styles/Login.scss";
-
 config.autoAddCss = false;
 
 export type ToDoAppProps = AppProps & {
