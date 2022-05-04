@@ -1,0 +1,7 @@
+@import "./Variables.scss";
+
+.header_wrapper {
+    height: $header_height;
+    background-color: red;
+    border-top-right-radius: 40px;
+}

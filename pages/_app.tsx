@@ -7,24 +7,28 @@ import Layout from "../src/Layout";
 import "antd/dist/antd.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import "../styles/SideBar.scss";
-import "../styles/Layout.scss";
-import "../styles/Login.scss";
+import "../styles/Style.scss";
 config.autoAddCss = false;
 
 export type ToDoAppProps = AppProps & {
-  Component: NextComponentType<NextPageContext, any> & {
-    Layout: ComponentType;
-  };
+    Component: NextComponentType<NextPageContext, any> & {
+        Layout: ComponentType;
+    };
 };
 
-function MyApp({ Component }: ToDoAppProps) {
-  return (
-    <Fragment>
-      {/* <Layout /> */}
-      <Component />
-    </Fragment>
-  );
+function MyApp({ Component, router }: ToDoAppProps) {
+    const siteLayout = router.pathname;
+    return (
+        <Fragment>
+            {
+                siteLayout !== "/LoginPage"
+                && (
+                    <Layout />
+                )
+            }
+            <Component />
+        </Fragment>
+    );
 }
 
 export default MyApp;

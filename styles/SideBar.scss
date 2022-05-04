@@ -1,4 +1,4 @@
-$top_side_height: 70%;
+@import "./Variables.scss";
 
 .side_bar_wrapper {
     height: 100%;
@@ -7,21 +7,17 @@ $top_side_height: 70%;
 }
 
 .side_bar_items {
-    height: 100% - $top_side_height;
+    height: 100% - $top_side_height - $title_side_height;
     border-bottom-left-radius: 40px;
 }
 
 .top_side {
     height: $top_side_height;
-    border-right: 1px solid #f0f0f0;
-    border-right-width: 1px;
-    border-right-style: solid;
-    border-right-color: rgb(240, 240, 240);
+    padding: 20px;
     border-bottom: 1px solid #f0f0f0;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: rgb(240, 240, 240);
-    padding: 25px;
 }
 
 .top_side_info {
@@ -64,6 +60,23 @@ $top_side_height: 70%;
     }
 }
 
+.title_side_bar {
+    height: $title_side_height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.title_side_bar,
+.top_side {
+    border-right: 1px solid #f0f0f0;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: rgb(240, 240, 240);
+}
+
 .ant-layout-sider-children {
     padding-top: 0 !important;
     margin-top: 0 !important;
@@ -73,8 +86,8 @@ $top_side_height: 70%;
     padding: 0 24px;
     font-size: 18px;
     line-height: 64px;
-    cursor: pointer;
     transition: color 0.3s;
+    cursor: pointer;
 }
 
 .trigger:hover {
@@ -94,4 +107,3 @@ $top_side_height: 70%;
 .sider {
     height: 100%;
 }
-

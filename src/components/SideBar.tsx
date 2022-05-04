@@ -1,40 +1,18 @@
-
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
 import { Layout, Menu } from "antd";
-import {
-    MenuUnfoldOutlined,
-    MenuFoldOutlined,
-    UserOutlined,
-    VideoCameraOutlined,
-    UploadOutlined,
-} from "@ant-design/icons";
-import { useEffect, useState } from "react";
+import { FolderOutlined } from "@ant-design/icons";
+import { useState } from "react";
 import React from "react";
-import Image from "next/image";
-
 
 const { Header, Sider, Content } = Layout;
 
 const SideBar = () => {
-
-    const [username, setUsername] = useState<string>("")
-    const [password, setPassword] = useState<string>("")
-    const [noti, setNoti] = useState<string>("")
     const [collapsed, setCollapsed] = useState<boolean>(false);
 
-  const toggle = () => {
-    setCollapsed(!collapsed);
-  };
-
-
-    const onClickBtn = () => {
-        console.log(username)
-        console.log(password)
-
-        setNoti("login oke")
-        console.log(noti)
-    }
+    const toggle = () => {
+        setCollapsed(!collapsed);
+    };
 
     return (
         <Sider className="sider side_bar_wrapper" width={"23%"} theme="light" trigger={null} collapsible collapsed={collapsed}>
@@ -61,12 +39,9 @@ const SideBar = () => {
                         <div className="top_side_activity_item_title">Delay Tasks</div>
                     </div>
                 </div>
-                <form onSubmit={onClickBtn} >
-                    <input type="text" onChange={(e) => setUsername(e.target.value)}/>
-                    <input type="password" onChange={(e) => setPassword(e.target.value)}/>
-                    <button type="submit">dang nhap</button>
-                </form>
-                    <p>{noti}</p>
+            </div>
+            <div className="title_side_bar">
+                Groups
             </div>
             <Menu
                 className="side_bar_items"
@@ -76,17 +51,17 @@ const SideBar = () => {
                 items={[
                     {
                         key: "1",
-                        icon: <UserOutlined />,
+                        icon: <FolderOutlined />,
                         label: "nav 1",
                     },
                     {
                         key: "2",
-                        icon: <VideoCameraOutlined />,
+                        icon: <FolderOutlined />,
                         label: "nav 2",
                     },
                     {
                         key: "3",
-                        icon: <UploadOutlined />,
+                        icon: <FolderOutlined />,
                         label: "nav 3",
                     },
                 ]}
