@@ -1,3 +1,74 @@
+$top_side_height: 70%;
+
+.side_bar_wrapper {
+    height: 100%;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+.side_bar_items {
+    height: 100% - $top_side_height;
+    border-bottom-left-radius: 40px;
+}
+
+.top_side {
+    height: $top_side_height;
+    border-right: 1px solid #f0f0f0;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: rgb(240, 240, 240);
+    border-bottom: 1px solid #f0f0f0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(240, 240, 240);
+    padding: 25px;
+}
+
+.top_side_info {
+    display: flex;
+    width: 80%;
+    height: 70%;
+    margin: 0 auto;
+    flex-direction: column;
+
+    .image_container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        img {
+            object-fit: contain;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #f0f0f0;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+    }
+
+    .top_side_info_name {
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+    }
+}
+
+.top_side_activity {
+    display: flex;
+    justify-content: space-between;
+
+    .top_side_activity_item_count {
+        font-weight: bold;
+        font-size: 25px;
+        text-align: center;
+    }
+}
+
+.ant-layout-sider-children {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
 .trigger {
     padding: 0 24px;
     font-size: 18px;

@@ -1,9 +1,11 @@
-import React from 'react';
-import SideBar from './components/SideBar';
+import React from "react";
+import SideBar from "./components/SideBar";
 
 const Layout = () => {
     return (
-        <SideBar />
+        <div className="layout-wrapper">
+            <SideBar/>
+        </div>
     );
 };
 
