@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "trung",
+      "password": "123456",
+      "email": "quangtrung061019@gmail.com",
+      "first_name": "Quang",
+      "last_name": "Trung",
+      "address": "Quảng Trị",
+      "phone": "0941981831",
+      "avatar": "",
+      "birthday": "1999-06-10T09:51:35.947Z",
+      "is_active": "True",
+      "is_superuser": "False",
+      "last_login": "2021-06-10T09:51:35.947Z",
+      "date_joined": "2020-06-10T09:51:35.947Z"
+    }
+  ]
+}

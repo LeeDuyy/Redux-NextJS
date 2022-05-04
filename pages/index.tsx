@@ -1,22 +1,22 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from "next";
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
-    return (
-        <div className={styles.container}>
-            <Head>
-                <title>TODO App</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+  return (
+    <div className={styles.container}>
+      <Head>
+        <title>TODO App</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-            {/* <main className={styles.main}>
+      {/* <main className={styles.main}>
             </main>
 
             <footer className={styles.footer}>
             </footer> */}
-        </div>
-    )
-}
+    </div>
+  );
+};
 
-export default Home
+export default Home;
