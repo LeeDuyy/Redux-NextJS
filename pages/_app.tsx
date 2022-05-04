@@ -21,7 +21,7 @@ function MyApp({ Component, router }: ToDoAppProps) {
   const siteLayout = router.pathname;
   return (
     <Fragment>
-      {siteLayout !== "/login" && <Layout />}
+      {siteLayout !== "/login" && siteLayout !== "/register" && <Layout />}
       <Component />
     </Fragment>
   );

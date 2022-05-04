@@ -1,5 +1,9 @@
 // $background-color: #fff;
 
+.ant-btn-primary{
+    background: #D8E2DC;
+    border-color: #D8E2DC;
+}
 
 .ant-btn{
     border-radius: 25px;
@@ -16,7 +20,7 @@
         
     }
 }
-.body-login {
+.body-resister {
     position: relative;
     width: 900px;
     height: 600px;
@@ -38,7 +42,7 @@
 }
 
 .box-1,
-.box-2 {
+.box-2 {    
     width: 50%
 }
 

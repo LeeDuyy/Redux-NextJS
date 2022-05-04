@@ -23,7 +23,7 @@ const { Content } = Layout;
 const { Text } = Typography;
 const { Meta } = Card;
 
-const Login = () => {
+const Register = () => {
   const router = useRouter();
 
   const [getUserName, setUserName] = useState<string>("");
@@ -88,7 +88,7 @@ const Login = () => {
         }}
       >
         <div
-          className="body-login d-md-flex align-items-center justify-content-between"
+          className="body-resister d-md-flex align-items-center justify-content-between"
           style={{ borderRadius: "20px" }}
         >
           <div className="box-1 mt-md-0 mt-5">
@@ -101,8 +101,9 @@ const Login = () => {
             <div className="d-flex flex-column align-items-center justify-content-center">
               <div className="login-form">
                 <h1 className="text-center" style={{ fontWeight: "bolder" }}>
-                  Đăng Nhập
+                  Đăng Ký
                 </h1>
+
                 <Form
                   name="basic"
                   initialValues={{ remember: true }}
@@ -186,7 +187,7 @@ const Login = () => {
                         handleSubmit();
                       }}
                     >
-                      Đặng Nhập
+                      Đăng Ký
                     </Button>
                   </Form.Item>
                 </Form>
@@ -218,4 +219,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
