@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import data from '../../src/data/data.json';
 import prisma from '../../lib/prisma';
 
 
@@ -15,9 +14,8 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
             });
             console.log(result);
             
-            //const user = data.users.find((user) => user.username === username && user.password === password);
             if (result) {
-                res.status(200).json({
+                res.json({
                     status: 'success',
                     data: result,
                     title: 'Đăng nhập thành công',
@@ -31,7 +29,7 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
                 });
             }
         }
-        //res.json(data);
+       
     } catch (error) {
         res.json(null);
     }

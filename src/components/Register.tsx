@@ -27,13 +27,20 @@ const Register = () => {
   const router = useRouter();
 
   const [getUserName, setUserName] = useState<string>("");
+  const [getGmail, setGmail] = useState<string>("");
+  const [getPhoneNumber, setPhoneNumber] = useState<string>("");
   const [getPassword, setPassword] = useState<string>("");
+  const [getRePassword, setRePassword] = useState<string>("");
+  const [getBirthday, setBirthday] = useState<string>("");
   const [getRemember, setRemember] = useState<boolean>(false);
 
   const handleSubmit = async () => {
-    await Axios.post("http://localhost:3000/api/user", {
+    await Axios.post("http://localhost:3000/api/register", {
       username: getUserName,
+      gmail: getGmail,
+      phonenumber: getPhoneNumber,
       password: getPassword,
+      birthday: getBirthday,
     })
       .then((res) => {
         openNotificationWithIcon(
@@ -91,15 +98,9 @@ const Register = () => {
           className="body-resister d-md-flex align-items-center justify-content-between"
           style={{ borderRadius: "20px" }}
         >
-          <div className="box-1 mt-md-0 mt-5">
-            <img
-              // style={{ objectFit: "cover", width: "100%", height: "100%" }}
-              src="/Assets/images/login-side-3.png"
-            />
-          </div>
           <div className="box-2 d-flex flex-column h-100">
             <div className="d-flex flex-column align-items-center justify-content-center">
-              <div className="login-form">
+              <div className="register-form">
                 <h1 className="text-center" style={{ fontWeight: "bolder" }}>
                   Đăng Ký
                 </h1>
@@ -113,6 +114,7 @@ const Register = () => {
                 >
                   <Form.Item
                     name="username"
+                    label=""
                     rules={[
                       {
                         required: true,
@@ -124,14 +126,59 @@ const Register = () => {
                       className="form-item"
                       placeholder="Tên tài khoản"
                       onChange={(e) => setUserName(e.target.value)}
-                      // onChange={(e) => {
-                      //   setUserName(e.target.value);
-                      // }}
                     />
                   </Form.Item>
-
+                  <Form.Item
+                    name="gmail"
+                    label=""
+                    rules={[
+                      {
+                        required: true,
+                        message: "Vui lòng nhập tài khoản gmail!",
+                      },
+                    ]}
+                  >
+                    <Input
+                      className="form-item"
+                      placeholder="Tài khoản gmail"
+                      onChange={(e) => setGmail(e.target.value)}
+                    />
+                  </Form.Item>
+                  <Form.Item
+                    name="birthday"
+                    label=""
+                    rules={[
+                      {
+                        required: true,
+                        message: "Vui lòng nhập ngày sinh!",
+                      },
+                    ]}
+                  >
+                    <Input
+                      className="form-item"
+                      placeholder="Ngày sinh"
+                      onChange={(e) => setBirthday(e.target.value)}
+                    />
+                  </Form.Item>
+                  <Form.Item
+                    name="phonenumber"
+                    label=""
+                    rules={[
+                      {
+                        required: true,
+                        message: "Vui lòng nhập số điện thoại!",
+                      },
+                    ]}
+                  >
+                    <Input
+                      className="form-item"
+                      placeholder="Số điện thoại"
+                      onChange={(e) => setPhoneNumber(e.target.value)}
+                    />
+                  </Form.Item>
                   <Form.Item
                     name="password"
+                    label=""
                     rules={[
                       {
                         required: true,
@@ -148,35 +195,33 @@ const Register = () => {
                       // }}
                     />
                   </Form.Item>
-
-                  <Form.Item valuePropName="checked">
-                    <Row>
-                      <Col span={12}>
-                        <Checkbox>Ghi Nhớ</Checkbox>
-                      </Col>
-                      <Col span={12}>
-                        <a
-                          className="login-form-forgot"
-                          href="/"
-                          style={{
-                            color: "#b9dcf2",
-                            fontSize: "12px",
-                            fontWeight: "bold",
-                            float: "right",
-                          }}
-                        >
-                          Quên mật khẩu?
-                        </a>
-                      </Col>
-                    </Row>
+                  <Form.Item
+                    name="re-password"
+                    label=""
+                    rules={[
+                      {
+                        required: true,
+                        message: "Vui lòng nhập lại mật khẩu!",
+                      },
+                    ]}
+                  >
+                    <Input.Password
+                      className="form-item"
+                      placeholder="Nhập lại mật Khẩu"
+                      onChange={(e) => setRePassword(e.target.value)}
+                      // onChange={(e) => {
+                      //   setPassword(e.target.value);
+                      // }}
+                    />
                   </Form.Item>
 
                   <Form.Item>
                     <Button
-                      className="btn-login"
+                      className="btn-register"
                       type="primary"
                       htmlType="submit"
                       style={{
+                        marginTop: "20px",
                         width: 120,
                         height: 40,
                         background: "#b9dcf2",
@@ -184,34 +229,26 @@ const Register = () => {
                         borderRadius: "20px",
                       }}
                       onClick={() => {
-                        handleSubmit();
+                        if (getPassword !== getRePassword) {
+                          openNotificationWithIcon(
+                            "error",
+                            "Lỗi",
+                            "Mật khẩu không khớp!"
+                          );
+                        } else {
+                          handleSubmit();
+                        }
                       }}
                     >
                       Đăng Ký
                     </Button>
                   </Form.Item>
                 </Form>
-                <div className="login-type">
-                  <Card.Grid
-                    style={{
-                      borderRadius: "20px 0 0 20px",
-                    }}
-                  >
-                    <FacebookOutlined />
-                  </Card.Grid>
-                  <Card.Grid>
-                    <GoogleOutlined />
-                  </Card.Grid>
-                  <Card.Grid
-                    style={{
-                      borderRadius: "0 20px 20px 0",
-                    }}
-                  >
-                    <GithubOutlined />
-                  </Card.Grid>
-                </div>
               </div>
             </div>
+          </div>
+          <div className="box-1 mt-md-0 mt-5">
+            <img src="/Assets/images/login-side-3.png" />
           </div>
         </div>
       </Content>

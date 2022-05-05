@@ -8,10 +8,11 @@ datasource db {
 }
 
 model users {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
-  active   Int
-  dob      String
-  password String
-  userId   Int
-  username String
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  active      Boolean
+  birthday    String
+  gmail       String
+  password    String
+  phonenumber String
+  username    String
 }
