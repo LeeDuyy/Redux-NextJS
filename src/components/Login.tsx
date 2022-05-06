@@ -21,6 +21,7 @@ import {
 import Axios from "axios";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const { Content } = Layout;
 const { Text } = Typography;
@@ -94,13 +95,29 @@ const Login = () => {
           className="body-login d-md-flex align-items-center justify-content-between"
           style={{ borderRadius: "20px" }}
         >
-          <div className="box-1 mt-md-0 mt-5">
-            <img
-              // style={{ objectFit: "cover", width: "100%", height: "100%" }}
-              src="/Assets/images/login-side-3.png"
-            />
+          <div className="box-1-login mt-md-0 mt-5">
+            <div className="already">
+              <h2>CHƯA CÓ TÀI KHOẢN</h2>
+              <Link href={"/register"}>
+                <Button
+                  type="primary"
+                  style={{
+                    marginTop: "20px",
+                    width: 120,
+                    height: 40,
+                    background: "white",
+                    border: 0,
+                    color: "#b9dcf2",
+                    fontWeight: "bolder",
+                  }}
+                  shape="round"
+                >
+                  Đăng Ký
+                </Button>
+              </Link>
+            </div>
           </div>
-          <div className="box-2 d-flex flex-column h-100">
+          <div className="box-2-login d-flex flex-column h-100">
             <div className="d-flex flex-column align-items-center justify-content-center">
               <div className="login-form">
                 <h1 className="text-center" style={{ fontWeight: "bolder" }}>

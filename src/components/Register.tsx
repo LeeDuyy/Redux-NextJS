@@ -18,6 +18,7 @@ import {
 import Axios from "axios";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const { Content } = Layout;
 const { Text } = Typography;
@@ -95,10 +96,10 @@ const Register = () => {
         }}
       >
         <div
-          className="body-resister d-md-flex align-items-center justify-content-between"
+          className="body-register d-md-flex align-items-center justify-content-between"
           style={{ borderRadius: "20px" }}
         >
-          <div className="box-2 d-flex flex-column h-100">
+          <div className="box-2-register d-flex flex-column h-100">
             <div className="d-flex flex-column align-items-center justify-content-center">
               <div className="register-form">
                 <h1 className="text-center" style={{ fontWeight: "bolder" }}>
@@ -226,8 +227,8 @@ const Register = () => {
                         height: 40,
                         background: "#b9dcf2",
                         border: 0,
-                        borderRadius: "20px",
                       }}
+                      shape="round"
                       onClick={() => {
                         if (getPassword !== getRePassword) {
                           openNotificationWithIcon(
@@ -247,8 +248,27 @@ const Register = () => {
               </div>
             </div>
           </div>
-          <div className="box-1 mt-md-0 mt-5">
-            <img src="/Assets/images/login-side-3.png" />
+          <div className="box-1-register mt-md-0 mt-5">
+            <div className="already">
+              <h2>ĐÃ CÓ TÀI KHOẢN</h2>
+              <Link href={"/login"}>
+                <Button
+                  type="primary"
+                  style={{
+                    marginTop: "20px",
+                    width: 120,
+                    height: 40,
+                    background: "white",
+                    border: 0,
+                    color: "#b9dcf2",
+                    fontWeight: "bolder",
+                  }}
+                  shape="round"
+                >
+                  Đăng Nhập
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </Content>

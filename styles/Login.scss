@@ -7,9 +7,23 @@
 .ant-col-16 {
     max-width: 100%;
 }
+@keyframes login-form {
+	0% {
+        z-index: -1;
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+        z-index: 1;
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
 .login-form{
-    position: fixed;
-    top: 50%;
+    animation: login-form 0.5s linear 0s 1 normal forwards;
+    position: relative;
+    top: 25%;
     transform: translate(0, -50%);
     .form-item{
         border-radius: 25px;
@@ -26,19 +40,56 @@
     margin: 0;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px
 }
-
-.box-1 img {
+@keyframes box-1-login {
+    0% {
+        transform: translateX(0);
+	}
+    
+	100% {
+        transform: translateX(400px);
+	}
+}
+.box-1-login  {
+    z-index: 1;
+    background-image: url("/Assets/images/login-side-3.png") ;
+    background-size: 100% 100%;
+    position: relative;
+    animation: box-1-login 0.5s cubic-bezier(0.11, 0, 0.5, 0) 0s 1 reverse backwards;
     width: 100%;
     height: 100%;
-    object-fit: cover
+    text-shadow: 2px 2px 7px #949494;
+    @keyframes already-login {
+        0% {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .already{
+        animation: already-login 0.6s cubic-bezier(0.5, 1, 0.89, 1) 0s 1 normal forwards;
+        position: relative;
+        text-align: center;
+        top: 40%;
+        //left: %;
+        transform: translate(-50%, -50%);
+        h2{
+            font-family: 'Kanit', sans-serif;
+            color: whitesmoke;
+            // font-weight: 900;
+        }
+    }
 }
 
-.box-2 {
+.box-2-login {
     padding: 10px
 }
 
-.box-1,
-.box-2 {
+.box-1-login,
+.box-2-login {
     width: 50%
 }
 
@@ -51,9 +102,9 @@
 }
 
 .login-type{
+    position: relative;
     width: 120%;
     text-align: center;
     font-size: 2em;
-    position: relative;
     right: 10%;
 }

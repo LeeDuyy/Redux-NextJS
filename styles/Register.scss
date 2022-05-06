@@ -1,5 +1,4 @@
-// $background-color: #fff;
-
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap');
 .ant-btn-primary{
     background: #D8E2DC;
     border-color: #D8E2DC;
@@ -11,9 +10,24 @@
 .ant-col-16 {
     max-width: 100%;
 }
+
+@keyframes register-form {
+	0% {
+		opacity: 0;
+		transform: translateX(250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
 .register-form{
-    position: fixed;
-    top: 50%;
+    animation: register-form 0.5s linear 0s 1 normal forwards;
+
+    position: relative;
+    top: 20%;
     transform: translate(0, -50%);
     .form-item{
         border-radius: 25px;
@@ -22,7 +36,7 @@
         margin-bottom: 15px;
     }
 }
-.body-resister {
+.body-register {
     position: relative;
     width: 900px;
     height: 600px;
@@ -32,26 +46,63 @@
     margin: 0;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px
 }
+@keyframes box-1-register {
+	0% {
+		transform: translateX(0);
+	}
 
-.box-1 img {
+	100% {
+		transform: translateX(-400px);
+	}
+}
+.box-1-register {
+    animation: box-1-register 0.5s cubic-bezier(0.11, 0, 0.5, 0) 0s 1 reverse backwards;
+    background-image: url("/Assets/images/login-side-3.png") ;
+    background-size: 100% 100%;
+    position: relative;
     width: 100%;
     height: 100%;
-    object-fit: cover
+    text-shadow: 2px 2px 7px #949494;
+    @keyframes already-register {
+        0% {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+    
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    .already{
+        animation: already-register 0.6s cubic-bezier(0.5, 1, 0.89, 1) 0s 1 normal forwards;
+        position: relative;
+        text-align: center;
+        top: 40%;
+        //right: 15%;
+        transform: translate(-50%, -50%);
+        h2{
+            font-family: 'Kanit', sans-serif;
+            color: whitesmoke;
+            // font-weight: 900;
+        }
+    }
 }
 
-.box-2 {
-    padding: 10px
+.box-2-register {
+    padding: 10px;
 }
 
-.box-1,
-.box-2 {    
+.box-1-register,
+.box-2-register {    
     width: 50%
 }
 
 .btn-register{
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     -ms-transform: translateY(-50%);
     transform: translate(-50%, -50%);
 }
+
