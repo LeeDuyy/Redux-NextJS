@@ -46,6 +46,10 @@ const Login = () => {
           res.data.message
         );
         if (res.data.status === "success") {
+          console.log(res.data.authToken);
+          if (window) {
+            window.localStorage.setItem("token", res.data.authToken);
+          }
           router.push("/");
         }
       })

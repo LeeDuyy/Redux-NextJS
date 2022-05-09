@@ -1,6 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import prisma from "../../lib/prisma";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import { secret } from "../../config/secret";
 
 export default async function handle(
   req: NextApiRequest,
@@ -24,10 +26,25 @@ export default async function handle(
               console.log(err);
             }
             if (isMatch) {
+              const token = jwt.sign(
+                {
+                  username: checkUser.username,
+                  email: checkUser.gmail,
+                  phonenumber: checkUser.phonenumber,
+                },
+                secret,
+                {
+                  expiresIn: "1h",
+                }
+              );
+
+              // setCookies("todo-app", token, { req, res, ...cookieOptions });
+
               res.json({
                 status: "success",
                 title: "Đăng nhập thành công",
                 message: "Đăng nhập thành công",
+                authToken: token,
               });
             } else {
               res.json({
